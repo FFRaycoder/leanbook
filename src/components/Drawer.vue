@@ -57,12 +57,6 @@ import { mapGetters } from 'vuex'
 
 export default {
   name: 'LeanBookDrawer',
-  data () {
-    return {
-      // TODO: 以后需要从Vuex commit获得存储在LC的数据
-      books: this.$store.state.mock.books // TODO: 以后要修改的
-    }
-  },
   computed: {
     ...mapGetters({
       langs: 'i18n/langs'
