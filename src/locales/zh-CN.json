@@ -1,0 +1,20 @@
+{
+  "title": {
+    "home": "首页",
+    "book": "{name}"
+  },
+  "drawer": {
+    "home": "首页",
+    "new-book": "新建书籍"
+  },
+  "book": {
+    "read-now": "立即阅读",
+    "latest-chapter": "最新章节",
+    "all-chapters": "全部章节（共{total}章）",
+    "view-all": "查看全部"
+  },
+  "chapter-edit": {
+    "title-text-field": "章节标题",
+    "save": "保存"
+  }
+}

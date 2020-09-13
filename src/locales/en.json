@@ -1,0 +1,20 @@
+{
+  "title": {
+    "home": "Home",
+    "book": "Book {name}"
+  },
+  "drawer": {
+    "home": "Home",
+    "new-book": "Create new book"
+  },
+  "book": {
+    "read-now": "Read now",
+    "latest-chapter": "Latest Chapter",
+    "all-chapters": "All chapters ({total} chapters in total)",
+    "view-all": "View All"
+  },
+  "chapter-edit": {
+    "title-text-field": "Chapter Title",
+    "save": "Save"
+  }
+}

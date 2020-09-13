@@ -1,0 +1,40 @@
+name: CI
+on: [push, pull_request]
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Use Node 13
+        uses: actions/setup-node@v1
+        with:
+          node-version: 13.x
+
+      - name: Use cached node_modules
+        uses: actions/cache@v1
+        with:
+          path: node_modules
+          key: nodeModules-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            nodeModules-
+
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
+        env:
+          CI: true
+
+      - name: Lint (Push)
+        if: github.event_name == 'push'
+        run: yarn run lint
+        env:
+          CI: true
+
+      - name: Lint (Pull Request)
+        if: github.event_name == 'pull_request'
+        uses: reviewdog/action-eslint@v1
+        with:
+          reporter: github-pr-review
+          eslint_flags: 'src/'
